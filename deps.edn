@@ -1,5 +1,9 @@
-{:paths   ["src" "test"]
+{:paths   ["src"]
  :deps    {org.clojure/clojure {:mvn/version "1.10.0"}}
- :aliases {:nREPL
-           {:extra-deps
+ :aliases {:test
+           {:main-opts ["-m" "test-main"]
+            :extra-paths ["test"]}
+           :nREPL
+           {:main-opts ["-m" "nrepl.cmdline"]
+            :extra-deps
             {nrepl/nrepl {:mvn/version "0.7.0"}}}}}
